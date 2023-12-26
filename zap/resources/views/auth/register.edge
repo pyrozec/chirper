@@ -1,0 +1,30 @@
+@layout('layouts/master')
+@section('content')
+  <div class="container ">
+    <div class="row">
+        <div class="col-md-4  bg-white p-3 mt-5 shadow no-border rounded offset-md-4">
+          <form method="POST" action="{{route('register.store')}}">
+            {{ csrfField() }}
+              <div class="form-group">
+                <label for="name">Fullname</label>
+                <input type="text" class="form-control" id="name" name="name"  value="{{old('name','')}}" placeholder="Enter Fullname">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('name'), hasErrorFor('name')) }}
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email"  name="email" value="{{old('email','')}}" placeholder="Enter email">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+              </div>
+              <div class="form-group">
+                <label for="pasword">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
+              </div>
+              <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+        </div>
+    </div> 
+  </div>
+@endsection

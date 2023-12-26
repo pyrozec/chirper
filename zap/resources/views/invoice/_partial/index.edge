@@ -1,0 +1,37 @@
+@layout('layouts/master')
+@section('content')
+  
+<div class="container">
+
+    <div class="text-center">
+        @if(flashMessage('successmessage'))
+            <span class="alert alert-success p-1">{{ flashMessage('successmessage') }}</span>
+        @endif
+    </div>
+    <h4 class="text-center">All deposits</h4>
+    <div class="row">
+        @each(invoice in invoices)
+            <div class="col-md-4 mb-4 client-wrapper">
+                <a href="/invoices/view-invoice/{{invoice.id}}" class="w-100">
+                    <div class="card shadow-lg bg-dark text-white">
+                        <div class="card-body">
+                            <blockinvoice class="blockinvoice mb-0">
+                                <footer class="blockinvoice-footer">
+                                     <cite title="Source Title">Fullname:- {{invoice.username}}</cite>
+                                </footer>
+                                <footer class="blockinvoice-footer">
+                                    <cite title="Source Title">Deposit Amount:- ${{invoice.amount}}</cite>
+                                </footer>
+                            </blockinvoice>
+                        </div>
+                    </div>
+                </a> 
+            </div>  
+        @else 
+         <div class="col-md-12 empty-client text-center">
+                <p>No deposit has been made</p>
+         </div>
+        @endeach
+    </div>
+</div>
+@endsection

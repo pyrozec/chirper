@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  background-image: url("/splash.png");
+  background-color: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #00D64F;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+.hero-section {
+  background: url("/cash-app.png") no-repeat;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.cta-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  background-color: #00D64F;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  text-decoration: none;
+  color: #fff;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+.login-button {
+  background-color: #28A745;
+}
+
+.submit-button {
+  background-color: #00D64F;
+  color: #FFFFFF
+}
+
+.register-button {
+  background-color: #007BFF;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 32px 32px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #007BFF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #007BFF;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 536px;
+  margin: auto;
+  position: relative;
+}
+
+section:before {
+  content: "";
+  position: absolute;
+  background: url("/CashDaco.png") no-repeat;
+  background-size: 98%;
+  width: 50%;
+  height: 402px;
+  z-index: -1;
+}
+
+.logo {
+  background: url("/cashapp-badge.svg") no-repeat;
+  width: 36px;
+  height: 36px;
+  background-size: 100%;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+}
+
+.title {
+  background: url("/title.svg") no-repeat;
+  width: 219px;
+  height: 36px;
+  background-size: 100%;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.2s forwards;
+}
+
+.subtitle {
+  margin-top: 25px;
+  color: #000000;
+  font-size: 17px;
+  text-align: center;
+  letter-spacing: 0.5;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.5s forwards;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0.83rem 0;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2%;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark text-white">
+    <a class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active ">
+                <a class="btn text-white" href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-right" id="navbarNav">
+        @loggedIn
+            <ul class="navbar-nav">
+                    <li>
+                        <div class="text-right">
+                             <a href="{{route('create.client')}}" class="btn submit-button">Create Client</a>
+                        </div>
+            
+                        <div class="text-right">
+                            <a href="/invoices" class="btn submit-button">View Deposits</a>
+                        </div>
+                    </li>
+                        
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       {{ auth.user.username}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <form method="POST" action="{{route('logout')}}">
+                            {{ csrfField() }}
+                              <button  type="submit" class="dropdown-item" href="">logout</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        @else
+            <ul class="navbar-nav">
+                <li class="nav-item active pr-2">
+                    <a href="{{route('login.create')}}" class="btn btn-outline-danger">
+                      login
+                    </a>                            
+                </li> 
+                <li class="nav-item active pr-2">
+                    <a href="{{route('register.create')}}" class="btn btn-outline-primary">
+                        Register
+                    </a>                            
+                </li>
+            </ul>
+        @endloggedIn 
+    </div>
+</nav>
+         

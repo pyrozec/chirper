@@ -1,0 +1,36 @@
+@layout('layouts/master')
+@section('content')
+<div class="container">       
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow-lg bg-dark text-white">
+                <div class="card-body">
+                    <div class="float-right">
+                        <a href="/" class="btn btn-outline-primary ">back</a>
+                    </div>
+                    <h4 class="card-title">Client details</h4>
+                    <div class="clear-fix"></div>
+                    <blockclient class="blockclient mb-0">
+                        <p>Fullname:- {{client.name}}</p>
+                        <footer class="blockinvoice-footer">
+                            <cite title="Source Title">Cash tag:- {{client.cash_tag}}</cite>
+                        </footer>
+                        <footer class="blockclient-footer">
+                            <cite title="Source Title">Email address:- {{client.email}}</cite>
+                        </footer>
+                        <footer class="blockclient-footer">
+                            <cite title="Source Title">Phone number:- {{client.phone}}</cite>
+                        </footer>
+                             <br>
+                        <div>
+                            <a href="/edit-client/{{client.id}}" class="btn submit-button">edit</a>
+                            <a href="/delete-client/{{client.id}}" class="btn btn-danger">delete</a>
+                            <a href="/invoices/create-invoice/{{client.id}}" class="btn submit-button">apply deposit</a>
+                        </div>
+                    </blockclient>                      
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+@endsection

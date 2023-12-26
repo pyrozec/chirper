@@ -1,0 +1,57 @@
+@layout('layouts/master')
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 shadow bg-white mt-5 rounded p-3">
+            <div class="float-right">
+                <a href="/invoices" class="btn btn-outline-dark ">back</a>
+            </div>
+                <br>        
+            <div class="clear-fix"></div>
+                <form method="POST" action="{{route('store.invoice')}}">
+                    {{ csrfField() }}
+                  <div>
+                    <label for="name">Fullname</label>
+                    <input type="text" class="form-control" id="name" name="name"  value="{{ client.name }}" placeholder="Enter Fullname">
+                    {{ elIf('<span class=text-danger>$self</span>', getErrorFor('name'), hasErrorFor('name')) }}
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email"  name="email" value="{{ client.email }}" placeholder="Enter email">
+                    {{ elIf('<span class=text-danger>$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+                  </div>
+                  <div class="form-group">
+                    <label for="cashtag">Cash tag</label>
+                    <input type="cashtag" class="form-control" id="cashtag"  name="cashtag" value="{{ client.cash_tag }}" placeholder="Enter cash tag">
+                    {{ elIf('<span class=text-danger>$self</span>', getErrorFor('cashtag'), hasErrorFor('cashtag')) }}
+                  </div>
+                  <div class="form-group">
+                    <label for="amount">Amount</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                        <input type="text" class="form-control" id="amount"  name="amount" value="{{old('amount', '') }}" placeholder="Enter amount">
+                        {{ elIf('<span class=text-danger>$self</span>', getErrorFor('amount'), hasErrorFor('amount')) }}
+                      </div>
+                      <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" rows="5"  name='description' class="form-control" id="description" placeholder="Write a deposit description"></textarea>
+                      </div> 
+                      <div class="form-group">
+                        <label for="due_date">Due Date</label>
+                        <input type="date" class="form-control" id="due_date" name="due_date" value="{{old('due_date', '')}}">
+                        {{ elIf('<span class=text-danger>$self</span>', getErrorFor('date'), hasErrorFor('date')) }}
+                      </div>               
+                    <div class="text-center">
+                        <button type="submit" class="btn submit-button">Send</button>
+                    </div>      
+                </form>
+            </div>
+        </div>  
+        <div class="col-md-3"></div>
+    </div> 
+</div>
+@endsection
+ 

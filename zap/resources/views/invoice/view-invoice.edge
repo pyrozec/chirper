@@ -1,0 +1,41 @@
+@layout('layouts/master')
+@section('content')
+<div class="container">       
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow-lg bg-dark text-white">
+                <div class="card-body">
+                    <div class="float-right">
+                        <a href="/invoices" class="btn btn-outline-primary ">back</a>
+                    </div>
+                    <h4 class="card-title">Deposit Details</h4>
+                    <div class="clear-fix"></div>
+                    <blockclient class="blockclient mb-0">
+                        <p>Fullname:- {{invoice.username}}</p>
+                        <footer class="blockinvoice-footer">
+                            <cite title="Source Title">Cash Tag:- {{invoice.cashtag}}</cite>
+                        </footer>
+                        <footer class="blockclient-footer">
+                            <cite title="Source Title">Email address:- {{invoice.email}}</cite>
+                        </footer>
+                        <footer class="blockinvoice-footer">
+                            <cite title="Source Title">Deposit Amount:- ${{invoice.amount}}</cite>
+                        </footer>
+                        <footer class="blockinvoice-footer">
+                            <cite title="Source Title">Due Date:- {{invoice.due_date}}</cite>
+                        </footer>
+                        <footer class="blockinvoice-footer">
+                            <cite title="Source Title">Description:- {{invoice.description}}</cite>
+                        </footer>
+                        <div>
+                            <br>
+                            <a href="/invoices/delete-invoice/{{invoice.id}}" class="btn btn-danger">delete</a>
+                            <a href="/send-invoice/{{invoice.id}}" class="btn submit-button">send deposit</a>
+                        </div>
+                    </blockclient>                      
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+@endsection

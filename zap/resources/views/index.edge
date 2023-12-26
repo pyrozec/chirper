@@ -1,0 +1,60 @@
+@layout('layouts/master')
+@section('content')
+  
+<div class="container">
+
+    <div class="text-center">
+        @if(flashMessage('successmessage'))
+            <span class="alert alert-success p-1">{{ flashMessage('successmessage') }}</span>
+        @endif
+    </div>
+    <h4 class="text-center">All clients</h4>
+    <div class="row">
+        @each(client in clients)
+            <div class="col-md-4 mb-4 client-wrapper">
+                <a href="/view-client/{{client.id}}" class="w-100">
+                    <div class="card shadow-lg bg-dark text-white">
+                        <div class="card-body">
+                            <blockclient class="blockclient mb-0">
+                                <footer class="blockinvoice-footer">
+                                    <cite title="Source Title">{{client.name}}</cite>
+                                </footer>
+                                <footer class="blockclient-footer">
+                                    <cite title="Source Title"> {{client.email}}</cite>
+                                </footer>
+                            </blockclient>
+                        </div>
+                    </div>
+                </a> 
+            </div>  
+        @else 
+         <div class="col-md-12 empty-client text-center"></div>
+        @endeach
+                 <div class="hero-section">
+                    <div class="hero-content">
+                      <h1>Welcome to Chirper App</h1>
+                      <p>Your solution for efficient flashing and more.</p>
+                    </div>
+                  </div>
+                
+                  <div class="cta-section">
+                    <h2>Get Started Today</h2>
+                    <p>Join our community and experience the benefits of Chirper App.</p>
+                
+                    <div>
+                      <button id="loginButton" class="button login-button">Login</button>
+                    </div>
+        
+                    <br>
+        
+                    <div>
+                        <button id="registerButton" class="button register-button">Register</button>
+                    </div>
+                
+                    <p id="output">Waiting for button click...</p>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
