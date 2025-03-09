@@ -1,0 +1,33 @@
+{
+  "name": "chirper",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^5.8.1",
+    "@grammyjs/ratelimiter": "^1.2.1",
+    "axios": "^1.8.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "google-translate-api-x": "^10.7.2",
+    "grammy": "^1.35.0",
+    "ioredis": "^5.6.0",
+    "node-cache": "^5.1.2",
+    "node-schedule": "^2.1.1",
+    "nodemon": "^3.1.9",
+    "redis": "^4.7.0",
+    "sqlite3": "^5.1.7",
+    "twilio": "^5.4.5",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
